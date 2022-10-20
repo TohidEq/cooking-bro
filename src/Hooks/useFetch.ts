@@ -1,3 +1,4 @@
+import { type } from "os";
 import { useEffect, useState } from "react";
 type data =
   | {
@@ -11,7 +12,7 @@ type data =
 
 export const useFetch = (
   url: string
-): { data: data; error: string | null; isPending: boolean } => {
+): { data: data | any; error: string | null; isPending: boolean } => {
   const [data, setData] = useState<data>(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);

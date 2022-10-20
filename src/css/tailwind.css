@@ -10,4 +10,7 @@
 @import "../Components/Pages/Search/Search.css";
 @import "../Components/Pages/Recipe/Recipe.css";
 
+@import "../Components/RecipeCard/RecipeCard.css";
+@import "../Components/RecipeList/RecipeList.css";
+
 @import "../Components/Navbar/Navbar.css";
