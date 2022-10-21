@@ -5,7 +5,9 @@
 
 @import "./base/_page.css";
 
-@import "../Components/Create/Create.css";
-@import "../Components/Home/Home.css";
-@import "../Components/Search/Search.css";
-@import "../Components/Recipe/Recipe.css";
+@import "../Components/Pages/Create/Create.css";
+@import "../Components/Pages/Home/Home.css";
+@import "../Components/Pages/Search/Search.css";
+@import "../Components/Pages/Recipe/Recipe.css";
+
+@import "../Components/Navbar/Navbar.css";

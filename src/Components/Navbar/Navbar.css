@@ -1,0 +1,33 @@
+/* colors */
+.nav-links a {
+  @apply hover:bg-color-a2;
+}
+
+.nav-links a.active {
+  @apply bg-color-a2;
+}
+
+.navbar {
+  @apply bg-color-a1 text-white;
+}
+
+/* style */
+.navbar {
+  @apply text-sm lg:text-base;
+}
+.navbar h1 {
+  @apply font-medium py-2 pl-2 
+    text-sm sm:text-base md:text-lg;
+}
+.navbar nav {
+  @apply container mx-auto
+    flex justify-between;
+}
+
+.nav-links {
+  @apply flex gap-x-1 md:gap-x-2 items-center pr-1;
+}
+.nav-links a {
+  @apply h-fit px-2 rounded py-0.5 hover:bg-opacity-50
+  transition-all duration-150;
+}
