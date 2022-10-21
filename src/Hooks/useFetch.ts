@@ -1,17 +1,29 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+type data =
+  | {
+      id: number;
+      title: string;
+      ingredients: string[];
+      method: string;
+      cookingTime: string;
+    }[]
+  | null;
 
-export const useFetch = (url: string, _options: any) => {
-  const [data, setData] = useState(null);
+export const useFetch = (
+  url: string
+): { data: data; error: string | null; isPending: boolean } => {
+  const [data, setData] = useState<data>(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
   // use useRef to wrap an object/array argument
   // which is a useEffect dependency
-  const options = useRef(_options).current;
+  //const options = useRef(_options).current;
+  // {=> (url, _options )(3) and [url, options](-4)}
 
   useEffect(() => {
     const controller = new AbortController();
-    console.log(options);
+
     const fetchData = async () => {
       setIsPending(true);
       try {
@@ -38,7 +50,7 @@ export const useFetch = (url: string, _options: any) => {
     return () => {
       controller.abort();
     };
-  }, [url, options]);
+  }, [url]);
 
   return { data, isPending, error };
 };
