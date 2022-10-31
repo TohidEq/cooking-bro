@@ -10,19 +10,21 @@ const Recipe = (props: Props) => {
   const { data: recipe, error, isPending } = useFetch(url);
   return (
     <>
-      <Loading isPending={isPending} error={error} />
-      {recipe && (
-        <div className="recipe container bg-[#fff] text-black">
-          <h2>{recipe.title}</h2>
-          <p>Takes {recipe.cookingTime} to cook.</p>
-          <ul>
-            {recipe.ingredients.map((ing: string) => (
-              <li key={ing}>{ing}</li>
-            ))}
-          </ul>
-          <p className="method">{recipe.method}</p>
-        </div>
-      )}
+      <div className="recipe ">
+        <Loading isPending={isPending} error={error} />
+        {recipe && (
+          <>
+            <h2>{recipe.title}</h2>
+            <p className="cook-time">Takes {recipe.cookingTime} to cook.</p>
+            <ul>
+              {recipe.ingredients.map((ing: string) => (
+                <li key={ing}>{ing}</li>
+              ))}
+            </ul>
+            <p className="method">{recipe.method}</p>
+          </>
+        )}
+      </div>
     </>
   );
 };
