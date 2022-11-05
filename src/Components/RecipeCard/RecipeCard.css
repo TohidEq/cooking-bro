@@ -53,6 +53,8 @@
     hover:shadow-sm
     hover:bg-opacity-10
 
+    active:bg-opacity-5
+
     rounded
     text-center;
 }

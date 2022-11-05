@@ -1,3 +1,15 @@
 body {
   @apply text-black bg-white;
 }
+.page-title {
+  @apply text-center
+    pt-3
+    sm:pt-5
+    md:pt-7 
+
+    text-lg
+    font-medium
+    sm:text-xl
+    md:text-2xl
+    xl:text-3xl;
+}

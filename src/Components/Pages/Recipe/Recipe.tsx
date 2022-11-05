@@ -14,7 +14,7 @@ const Recipe = (props: Props) => {
         <Loading isPending={isPending} error={error} />
         {recipe && (
           <>
-            <h2>{recipe.title}</h2>
+            <h2 className="page-title">{recipe.title}</h2>
             <p className="cook-time">Takes {recipe.cookingTime} to cook.</p>
             <ul>
               {recipe.ingredients.map((ing: string) => (
