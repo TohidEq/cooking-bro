@@ -6,7 +6,9 @@
 
 .recipe h2 {
   @apply text-center
-    pt-4 
+    pt-3
+    sm:pt-5
+    md:pt-7 
 
     text-lg
     font-medium
@@ -33,9 +35,11 @@
 }
 
 .recipe ul {
-  @apply flex flex-wrap
+  @apply flex flex-wrap  
     justify-center
     gap-x-1
+
+    opacity-70 
     
     pb-0.5
     sm:pb-3
@@ -60,6 +64,8 @@
     sm:pt-1
     md:pt-2
     xl:pt-3
+    
+    px-2
     
     text-base
     sm:text-lg

@@ -3,7 +3,10 @@
     p-2
     flex flex-wrap
     shadow-lg rounded
-    bg-[#fff];
+    bg-[#fff]
+    transition-all duration-150
+    hover:rotate-3
+    active:-rotate-2;
 }
 
 .recipe-card h3 {
