@@ -1,10 +1,12 @@
 .recipe {
   @apply mx-auto
+    bg-[#fff]
+    rounded
+    mt-2
+    pb-2
     text-black
     max-w-3xl;
 }
-
-
 
 .recipe p.cook-time {
   @apply text-center

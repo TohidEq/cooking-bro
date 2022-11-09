@@ -90,6 +90,29 @@
     opacity-60 
     
     pb-0.5
+    
+
+    text-sm
+    sm:text-base
+    md:text-lg
+    xl:text-xl;
+}
+.create li {
+  @apply italic;
+}
+.create li::after {
+  content: ",";
+}
+.create li:last-child::after {
+  content: ".";
+}
+
+.clear-btn {
+  @apply p-1
+    text-color-a2
+    opacity-60 
+    
+    pb-0.5
     sm:pb-3
     md:pb-4
     xl:pb-5
@@ -99,10 +122,4 @@
     sm:text-base
     md:text-lg
     xl:text-xl;
-}
-.create li::after {
-  content: ",";
-}
-.create li:last-child::after {
-  content: ".";
 }

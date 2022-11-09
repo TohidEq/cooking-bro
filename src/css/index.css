@@ -750,7 +750,6 @@ body {
 
 @media (min-width: 640px) {
   .create ul {
-    padding-bottom: 0.75rem;
     font-size: 1rem;
     line-height: 1.5rem;
   }
@@ -758,7 +757,6 @@ body {
 
 @media (min-width: 768px) {
   .create ul {
-    padding-bottom: 1rem;
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
@@ -766,10 +764,13 @@ body {
 
 @media (min-width: 1280px) {
   .create ul {
-    padding-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+}
+
+.create li {
+  font-style: italic;
 }
 
 .create li::after {
@@ -780,13 +781,52 @@ body {
   content: ".";
 }
 
+.clear-btn {
+  padding: 0.25rem;
+  padding-bottom: 0.125rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(163 87 9 / var(--tw-text-opacity));
+  opacity: 0.6;
+}
+
+@media (min-width: 640px) {
+  .clear-btn {
+    padding-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .clear-btn {
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .clear-btn {
+    padding-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 .Home {
 }
 
 .recipe {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0.5rem;
   max-width: 48rem;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-bottom: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(27 26 23 / var(--tw-text-opacity));
 }
