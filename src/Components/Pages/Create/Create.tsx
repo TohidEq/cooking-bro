@@ -1,7 +1,8 @@
 import { link } from "fs";
 import React, { useRef } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFetch } from "../../../Hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
@@ -21,16 +22,30 @@ const Create = (props: Props) => {
     "POST"
   );
 
+  const [emptyIngredients, setEmptyIngredients] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(title, method, cookingTime);
-    postData({
-      title,
-      ingredients,
-      method,
-      cookingTime: cookingTime + " minutes",
-    });
+    if (ingredients.length > 0) {
+      postData({
+        title,
+        ingredients,
+        method,
+        cookingTime: cookingTime + " minutes",
+      });
+    } else {
+      setEmptyIngredients(true);
+    }
   };
+
+  // redirect user when we get data response:
+  useEffect(() => {
+    if (data) {
+      navigate("/");
+    }
+  }, [data]);
 
   const handleAdd = (e: any) => {
     e.preventDefault();
@@ -66,10 +81,16 @@ const Create = (props: Props) => {
 
         {/* ingredients go here */}
         <label htmlFor="">
-          <span>Recipe ingredients:</span>
+          <span>
+            Recipe ingredients
+            {emptyIngredients && <span> (pls input someshits) </span>}:
+          </span>
           <div className="ingredients">
             <input
-              onChange={(e) => setNewIngredient(e.target.value)}
+              onChange={(e) => {
+                setNewIngredient(e.target.value);
+                setEmptyIngredients(false);
+              }}
               value={newIngredient}
               ref={ingredientsInput}
               type="text"

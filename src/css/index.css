@@ -589,7 +589,7 @@ body {
   }
 }
 
-.create form label span {
+.create form label > span {
   display: block;
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
@@ -599,7 +599,7 @@ body {
 }
 
 @media (min-width: 640px) {
-  .create form label span {
+  .create form label > span {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     font-size: 1.125rem;
@@ -608,7 +608,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .create form label span {
+  .create form label > span {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 1.25rem;
@@ -617,12 +617,17 @@ body {
 }
 
 @media (min-width: 1280px) {
-  .create form label span {
+  .create form label > span {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     font-size: 1.5rem;
     line-height: 2rem;
   }
+}
+
+.create form label > span > span {
+  --tw-text-opacity: 1;
+  color: rgb(163 87 9 / var(--tw-text-opacity));
 }
 
 .create form label .input {
@@ -943,6 +948,7 @@ body {
   display: flex;
   max-width: 320px;
   flex-wrap: wrap;
+  overflow: hidden;
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));

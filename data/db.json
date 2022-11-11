@@ -38,16 +38,15 @@
       "cookingTime": "35 minutes"
     },
     {
-      "title": "test title",
+      "title": "test",
       "ingredients": [
-        "test1",
-        "test2",
-        "test4",
-        "test3"
+        "1 test1",
+        "23 test3",
+        "33 rrrr"
       ],
-      "method": "thest  method\nhahaha\nlorem felan test",
-      "cookingTime": "56 minutes",
-      "id": "SL24VUZ"
+      "method": "this is test and, test and blah blah blah test test. test this is test and test and blah blah blah, test test test this is test and test and blah blah blah test test test.",
+      "cookingTime": "38 minutes",
+      "id": "1wwuevp"
     }
   ]
 }

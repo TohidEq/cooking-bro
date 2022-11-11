@@ -18,7 +18,7 @@
     xl:mb-7;
 }
 
-.create form label span {
+.create form label > span {
   @apply block opacity-60
     py-0.5
     sm:py-1
@@ -28,6 +28,9 @@
     sm:text-lg
     md:text-xl
     xl:text-2xl;
+}
+.create form label > span > span {
+  @apply text-color-a2;
 }
 
 .create form label .input {
