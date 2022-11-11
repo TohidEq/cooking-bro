@@ -11,11 +11,32 @@ type data =
   | null;
 
 export const useFetch = (
-  url: string
-): { data: data | any; error: string | null; isPending: boolean } => {
+  url: string,
+  method: string = "GET"
+): {
+  data: data | any;
+  error: string | null;
+  isPending: boolean;
+  postData: any;
+} => {
   const [data, setData] = useState<data>(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
+
+  const [options, setOptions] = useState<
+    | { method: string; headers: { "Content-Type": string }; body: string }
+    | undefined
+  >();
+
+  const postData = (postData: any) => {
+    setOptions({
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData),
+    });
+  };
 
   // use useRef to wrap an object/array argument
   // which is a useEffect dependency
@@ -25,10 +46,13 @@ export const useFetch = (
   useEffect(() => {
     const controller = new AbortController();
 
-    const fetchData = async () => {
+    const fetchData = async (fetchOptions: any = null) => {
       setIsPending(true);
       try {
-        const response = await fetch(url, { signal: controller.signal });
+        const response = await fetch(url, {
+          ...fetchOptions,
+          signal: controller.signal,
+        });
         if (!response.ok) {
           throw new Error(response.statusText);
         }
@@ -46,12 +70,20 @@ export const useFetch = (
         }
       }
     };
-    fetchData();
+
+    if (method === "GET") {
+      fetchData();
+    }
+
+    if (method === "POST" && options) {
+      // jjj
+      fetchData(options);
+    }
 
     return () => {
       controller.abort();
     };
-  }, [url]);
+  }, [url, options, method]);
 
-  return { data, isPending, error };
+  return { data, isPending, error, postData };
 };

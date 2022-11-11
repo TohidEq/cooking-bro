@@ -15,7 +15,9 @@ const Recipe = (props: Props) => {
         {recipe && (
           <>
             <h2 className="page-title">{recipe.title}</h2>
-            <p className="cook-time">Takes {recipe.cookingTime} to cook.</p>
+            <p className="cook-time">
+              Takes {recipe.cookingTime} to cook.
+            </p>
             <ul>
               {recipe.ingredients.map((ing: string) => (
                 <li key={ing}>{ing}</li>

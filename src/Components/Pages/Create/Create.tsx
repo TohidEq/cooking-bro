@@ -1,6 +1,7 @@
 import { link } from "fs";
 import React, { useRef } from "react";
 import { useState } from "react";
+import { useFetch } from "../../../Hooks/useFetch";
 
 type Props = {};
 
@@ -14,6 +15,22 @@ const Create = (props: Props) => {
   const [newIngredient, setNewIngredient] = useState<string>("");
 
   const [isRemoved, setIsRemoved] = useState<boolean>(false);
+
+  const { postData, error, data } = useFetch(
+    "http://localhost:3001/recipes",
+    "POST"
+  );
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log(title, method, cookingTime);
+    postData({
+      title,
+      ingredients,
+      method,
+      cookingTime: cookingTime + " minutes",
+    });
+  };
 
   const handleAdd = (e: any) => {
     e.preventDefault();
@@ -29,11 +46,6 @@ const Create = (props: Props) => {
   const removeAllIngredient = () => {
     setIngredients([]);
     setIsRemoved(true);
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log(title, method, cookingTime);
   };
 
   return (
@@ -62,7 +74,6 @@ const Create = (props: Props) => {
               ref={ingredientsInput}
               type="text"
               className="input"
-              required
             />
             <button className="btn" onClick={handleAdd}>
               add
