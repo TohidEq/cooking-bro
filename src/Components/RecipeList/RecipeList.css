@@ -22,3 +22,7 @@
     justify-items-center
     container mx-auto;
 }
+.error {
+  @apply w-fit mx-auto 
+    py-4 opacity-70;
+}
