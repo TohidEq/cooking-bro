@@ -1,0 +1,20 @@
+.searchbar {
+  @apply px-2;
+}
+.searchbar label {
+  @apply pr-2  
+    hidden
+    sm:inline-block  
+    md:visible;
+}
+
+.searchbar input {
+  @apply rounded
+    placeholder-[#6c6c6c]
+    sm:placeholder-opacity-0
+    text-black
+    w-32
+    sm:w-40 
+    lg:w-80;
+  outline-color: rgba(0, 0, 0, 0);
+}

@@ -13,4 +13,6 @@
 @import "../Components/RecipeCard/RecipeCard.css";
 @import "../Components/RecipeList/RecipeList.css";
 
+@import "../Components/SearchBar/SearchBar.css";
+
 @import "../Components/Navbar/Navbar.css";
