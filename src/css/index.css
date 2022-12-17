@@ -1242,19 +1242,17 @@ body {
 
 /* colors */
 
-.nav-links a:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 87 9 / var(--tw-bg-opacity));
+.nav-links a {
+  border-width: 3px;
+  border-color: rgb(240 227 202 / var(--tw-border-opacity));
+  --tw-border-opacity: 0;
 }
 
 .nav-links a.active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 87 9 / var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
 }
 
 .navbar {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 131 3 / var(--tw-bg-opacity));
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   --tw-text-opacity: 1;

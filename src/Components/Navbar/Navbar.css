@@ -1,14 +1,14 @@
 /* colors */
 .nav-links a {
-  @apply hover:bg-color-a2;
+  @apply border-[3px] border-white border-opacity-0;
 }
 
 .nav-links a.active {
-  @apply bg-color-a2;
+  @apply border-opacity-100;
 }
 
 .navbar {
-  @apply bg-color-a1 py-2 text-white;
+  @apply py-2 text-white;
 }
 
 /* style */
