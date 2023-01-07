@@ -1,0 +1,20 @@
+.theme-selector {
+  @apply max-w-5xl
+    mx-auto
+    my-2
+    md:pr-7;
+}
+.theme-buttons {
+  @apply container flex 
+    items-center
+    justify-center md:justify-end mx-auto;
+}
+.theme-buttons div {
+  @apply inline-block
+    w-5 h-5 
+    cursor-pointer
+    ml-2 rounded-full
+    
+    hover:scale-110
+    active:scale-125;
+}
