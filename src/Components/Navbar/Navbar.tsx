@@ -7,11 +7,11 @@ interface AppContextInterface {
 }
 export default function Navbar() {
   // const { color } = myAppContext!;
-  const { color } = useTheme()!;
+  const { color, changeColor } = useTheme();
 
   return (
     <div className="navbar" style={{ background: color }}>
-      <nav>
+      <nav onClick={() => changeColor("pink")}>
         <Link to={"/"} className="nav-title">
           <h1>Cooking Bro</h1>
         </Link>
