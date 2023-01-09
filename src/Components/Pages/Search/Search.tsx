@@ -16,11 +16,11 @@ const Search = (props: Props) => {
 
   const { error, data, isPending } = useFetch(url);
   return (
-    <>
+    <div className="search">
       <h2 className="page-title">Recipe including "{query}"</h2>
       <Loading isPending={isPending} error={error} />
       {data && <RecipeList recipes={data} />}
-    </>
+    </div>
   );
 };
 

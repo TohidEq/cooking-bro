@@ -3,11 +3,14 @@
 }
 
 .create form {
-  @apply pt-2 grid justify-items-stretch
-    sm:pt-3
-    md:pt-4
-    xl:pt-5
-    px-2;
+  @apply grid justify-items-stretch
+    sm:mt-3
+    md:mt-4
+    xl:mt-5
+    p-2
+    
+    mt-2
+    rounded;
 }
 
 .create form label {
@@ -127,4 +130,21 @@
     sm:text-base
     md:text-lg
     xl:text-xl;
+}
+
+.dark .create {
+  @apply text-white;
+}
+.dark .create form {
+  @apply bg-[#555];
+}
+
+.dark .create .input {
+  @apply text-black;
+}
+
+.dark .create .btn {
+  @apply bg-opacity-30
+    hover:bg-opacity-40
+    active:bg-opacity-60;
 }

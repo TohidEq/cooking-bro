@@ -1,8 +1,9 @@
 .theme-selector {
   @apply max-w-5xl
     mx-auto
-    my-2
-    md:pr-7;
+    mt-3
+    pr-2
+    md:px-7;
 }
 .theme-buttons {
   @apply container flex 
@@ -14,7 +15,11 @@
     w-5 h-5 
     cursor-pointer
     ml-2 rounded-full
-    
+    duration-150
     hover:scale-110
     active:scale-125;
+}
+
+.mode-toggle {
+  @apply mr-auto;
 }

@@ -4,6 +4,7 @@ interface AppContextInterface {
   color: string;
   mode: string;
   changeColor: (color: string) => void;
+  changeMode: (mode: string) => void;
 }
 
 export const ThemeContext = createContext<AppContextInterface | null>(null);
@@ -35,7 +36,7 @@ export function ThemeProvider({ children }: any) {
     dispatch({ type: "CHANGE_MODE", payload: mode });
   };
   return (
-    <ThemeContext.Provider value={{ ...state, changeColor }}>
+    <ThemeContext.Provider value={{ ...state, changeColor, changeMode }}>
       {children}
     </ThemeContext.Provider>
   );

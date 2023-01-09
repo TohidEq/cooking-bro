@@ -1,5 +1,12 @@
-body {
-  @apply text-black bg-white;
+body * {
+  @apply duration-150;
+}
+.App {
+  @apply text-black bg-white
+    min-h-screen;
+}
+.App.dark {
+  @apply bg-[#333];
 }
 .page-title {
   @apply text-center
